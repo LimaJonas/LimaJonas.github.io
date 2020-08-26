@@ -1,9 +1,11 @@
+/* Backgrounds */
 .bg-lofi{
     background-color: #090924 !important;
 }
 .bg-so-dark-blue{
     background-color: #eeeeee !important; 
 }
+/* Banner text and icons */
 .main-banner{
     width: 100%;
     height: 500px;
@@ -12,6 +14,13 @@
     background-size: cover;
     background-position: center;
 }
+i.social-icons{
+    color: white;
+}
+i:hover{
+    color: gray;
+}
+/* Usages */
 .shadow-text{
     text-shadow: 1px 1px 1px #000;
 }
@@ -21,12 +30,14 @@
 .social-icons{
     letter-spacing: 10px;
 }
-i.social-icons{
-    color: white;
-}
-i:hover{
-    color: gray;
-}
 .height-50{
     height: 50px;
+}
+
+/* Footer */
+a.footer:hover{
+    color: gray;
+}
+a.footer{
+    color: white;
 }
