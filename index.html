@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="css/lofi-template.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Lima - OnePage LoFi</title>
+    <title>Jonas Lima - One Page Lo-Fi</title>
 </head>
 <body class="bg-so-dark-blue">
     <header id="home">
         <nav class="navbar navbar-expand-lg navbar-dark bg-lofi">
-            <a class="navbar-brand" href="#">OnePage Lo-Fi</a>
+            <a class="navbar-brand" href="#">One Page Lo-Fi</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@
                         <a class="nav-link text-light" href="#style">Style Guide</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">About</a>
+                        <a class="nav-link text-light" href="#about">About</a>
                     </li>
                 </ul>
             </div>
@@ -59,8 +59,8 @@
         </div>
     </header>
     <main>
-        <section id="style">
-            <div class="container p-5" style="line-height: 1.6;">
+        <section>
+            <div class="container p-5" id="style" style="line-height: 1.6;">
                 <div class="row">
                     <div class="col-12">
                         <h1>Style Demo.</h1>
@@ -74,9 +74,17 @@
                     <div class="col-sm-6">
                         <h3>Paragraph and Images</h3>
                         <p class="text-secondary">
-                            <a href=""><img src="img/profile.jpg" alt="Profile image" width="120" height="120" class="rounded"></a>
+                            <a href=""><img src="img/profile.jpg" alt="Profile image" width="120" height="120" class="rounded p-2" style="float: left;"></a>
                             Donec ut lacinia mauris. Suspendisse accumsan neque id velit finibus accumsan. Nam nunc lacus, mattis vel semper vestibulum, pulvinar in metus. Proin justo nunc, posuere vel massa sed, vulputate placerat mauris. Sed sollicitudin ornare sem, ac hendrerit enim viverra in. Duis consequat egestas diam non tincidunt.
                         </p>
+                        <p class="text-secondary">
+                            <a href="#">link</a>,
+                            <abbr title="Description">abbrebation</abbr>,
+                            <strong>strong text</strong>,
+                            <em>em text</em>,
+                            <del>deleted text</del>, and
+                            <mark>this is a mark text.</mark>
+                         </p>
                     </div>
                     <div class="col-sm-6">
                         <h3>Drop caps</h3>
@@ -90,8 +98,80 @@
                         </p>
                     </div>
                 </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Quotes</h3>
+                        <blockquote class="blockquote">
+                            <p class="text-secondary mb-0">
+                                "Phasellus placerat placerat sem, ac feugiat urna hendrerit nec. Nullam sed nulla non sapien consequat aliquam vitae in libero. Nam vitae accumsan risus, in fringilla neque."
+                                <footer class="blockquote-footer">Somebody in <cite title="Source Title">a book</cite></footer>
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="img/cards.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">One card</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="img/cards.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">One Card</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Example list</h3>
+
+                        <ol class="text-secondary">
+                            <li>Example of</li>
+                            <li>an ordened list</li>
+                        </ol>
+
+                        <ul class="text-secondary">
+                            <li>Example of</li>
+                            <li>an unordened list</li>
+                        </ul>
+
+                        <hr />
+
+                        <h3>Headers</h3>
+                        <h1>H1 example</h1>
+                        <h2>H2 example</h2>
+                        <h3>H3 example</h3>
+                        <h4>H4 example</h4>
+                        <h5>H5 example</h5>
+                        <h6>H6 example</h6>
+
+                    </div>
+                    
+                </div>
+                <hr />
+                <div class="row" id="about">
+                    <div class="col-12">
+                        <h1>About me</h1>
+                        <p class="text-secondary"">
+                            I'm Jonas G. G. Lima. I am a web developer and I created this site using Bootstrap framework to add to my portfolio and curriculum.
+                        </p>
+                        <p>
+                            Email: jonaslima015@gmail.com
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
+        </section>    
     </main>
     <footer class="bg-lofi height-50 text-center">
         <p class="text-light">2020 © Developed by <a class="footer" href="https://github.com/LimaJonas" target="no_blank">Jonas Lima</a></p>
