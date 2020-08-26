@@ -1,0 +1,17 @@
+.bg-lofi{
+    background-color: #090924 !important;
+}
+.bg-so-dark-blue{
+    background-color: #021117 !important; 
+}
+.main-banner{
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/header-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.text-banner{
+    margin-top: 20px;
+}
