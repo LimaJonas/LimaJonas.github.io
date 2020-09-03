@@ -24,7 +24,7 @@
 </head>
 <body class="bg-almost-white">
     <header id="home">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-lofi">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-lofi fixed-top">
         <a class="navbar-brand" href="#">One Page Curriculum</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,19 @@
                     <a class="nav-link text-light" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#style">Style Guide</a>
+                    <a class="nav-link text-light" href="#objetivo">Objetivo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#about">About</a>
+                    <a class="nav-link text-light" href="#exp">Experiência profissional</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#form">Formação Acadêmica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#cursos">Cursos adicionais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#social">Links sociais</a>
                 </li>
             </ul>
         </div>
@@ -47,14 +56,15 @@
         <div class="main-banner">
             <div class="container">
                 <div class="text-center pt-3 text-light">
-                    <h2 class="main-text shadow-text">Jonas Gabriel Gonçalves Lima</h1>
+                    <h2 class="main-text shadow-text desktop">Jonas Gabriel Gonçalves Lima</h2>
+                    <h2 class="shadow-text mobile">Jonas Gabriel Gonçalves Lima</h2>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <!-- examples to use -->
-        <div class="container p-5" id="style" style="line-height: 1.5;">
+        <div class="container p-5" style="line-height: 1.5;">
             <div class="row">
                 <div class="col-12">
                     <p class="text-secondary">
@@ -68,7 +78,7 @@
                 </div>
             </div>
             <hr />
-            <div class="row">
+            <div class="row" id="objetivo">
                 <div class="col-12">
                     <h3>Objetivo</h3>
                     <p class="text-secondary">
@@ -77,7 +87,7 @@
                 </div>
             </div>
             <hr />
-            <h3>Experiência profissional</h3>
+            <h3 id="exp">Experiência profissional</h3>
             <div class="row">
                     <div class="col-sm-6">
                         <p class="text-secondary">
@@ -96,7 +106,7 @@
                     </div>
             </div>
             <hr />
-            <h3>Formação acadêmica</h3>
+            <h3 id="form">Formação acadêmica</h3>
             <div class="row">
                 <div class="col-sm-6">
                     <p class="text-secondary">
@@ -146,7 +156,7 @@
                 </div>
             </div>
             <hr />
-            <h3>Cursos adicionais</h3>
+            <h3 id="cursos">Cursos adicionais</h3>
             <div class="row">
                 <div class="col-sm-6">
                     <p class="text-secondary">
@@ -209,7 +219,7 @@
                 </div>
             </div>         
     </main>
-    <footer class="bg-lofi height-80 text-center">
+    <footer id="social" class="bg-lofi height-80 text-center">
         <p class="text-secondary shadow-text h4 pt-2">
             Links sociais
         </p>

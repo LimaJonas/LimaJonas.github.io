@@ -14,12 +14,32 @@
     background-size: cover;
     background-position: center;
 }
+
 i.social-icons{
     color: white;
 }
 i:hover{
     color: gray;
 }
+@media(max-width: 480px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+      /* ou inline, inline-block */
+    }
+}
+@media(min-width: 481px) {
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+      /* ou inline, inline-block */
+    }
+}
+
 /* Usages */
 .shadow-text{
     text-shadow: 1px 1px 1px #000;
