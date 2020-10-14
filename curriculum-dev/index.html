@@ -1,0 +1,207 @@
+<!-- 
+    Developed by: https://github.com/LimaJonas
+    
+    Instruções:
+    Basta substituir os espaços em Aspas conforme descrito, e colocar links dentro da TAG <a>.
+    Ao final, basta dar CONTROL+P, para Imprimir ou salvar como PDF.
+    
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ==== Imports, evitar alterar ===== -->
+    <!-- Bootstrap CSS import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
+    <!-- Bootstrap JS import -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
+    <!-- Font awesome import -->
+    <script src="https://kit.fontawesome.com/3f702bcaba.js" crossorigin="anonymous"></script>
+    <!-- template import -->
+    <link rel="stylesheet" href="css/lofi-template.css">
+    <!-- default html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ==================================  -->
+
+    <!-- Mudar titulo - OPCIONAL -->
+    <title>Name - One Page Curriculum</title>
+
+</head>
+<body class="bg-almost-white">
+    <header id="home">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-lofi">
+        <a class="navbar-brand" href="#">One Page Curriculum FREE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#objetivo">Objetivo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#proj">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#exp">Experiência profissional</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#form">Formação Acadêmica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#cursos">Cursos adicionais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#download">Download</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Background banner image -->
+        <div class="main-banner" id="home">
+            <div class="container">
+                <div class="text-center pt-3 text-light">
+                    <h2 class="main-text shadow-text desktop">Nome completo</h2>
+                    <h2 class="shadow-text mobile">Nome completo - visão mobile</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- examples to use -->
+        <div class="container p-5" style="line-height: 1.5;">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-secondary">
+                        <!-- Foto 3x4, alterar na pasta IMG -->
+                        <a href=""><img src="img/square.jpg" alt="Profile image" width="150" height="150" class="rounded p-2" style="float: left;"></a>
+                        "Nacionalidade", "Estado civil", "idade" anos.<br>
+                        "Endereço"<br>
+                        "Bairro", "Cidade-UF"<br>
+                        Celular: "Numero" / Email: "Email"<br>
+                        CNH: "letra"<br>
+                        <!-- Substituir links -->
+                        CV Lattes: <a href="ADD_LINK" target="no_blank">LINK</a>
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <div class="row" id="objetivo">
+                <div class="col-12">
+                    <h3>Objetivo</h3>
+                    <p class="text-secondary">
+                        Adicionar objetivo
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <h3 id="proj">Projetos de desenvolvimento</h3>
+            <div class="row">
+                <!-- Copiar e colar as divs a seguir para adicionar novo projeto -->
+                <!-- ====== PROJETO ==== -->
+                    <div class="col-sm-6">
+                        <p class="text-secondary">
+                        <ul class="text-secondary">
+                            <!-- Ano -->
+                            <li>XXXX</li> 
+                            <!-- Adionar Link do projeto -->
+                            <li class="list-unstyled">Links: <a href="ADD_LINK">"Link"</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-secondary pt-3">
+                            "Nome_Projeto"<br>
+                            "Descrição"
+                        </p>
+                    </div>
+                <!-- ===== FIM PROJETO ==== -->
+            </div>
+            <hr />
+            <h3 id="exp">Experiência profissional</h3>
+            <div class="row">
+                <!-- Copiar e colar as divs a seguir para adicionar novo projeto -->
+                <!-- ==== EXPERIENCIA PROFISIONAL ==== -->
+                    <div class="col-sm-6">
+                        <p class="text-secondary">
+                        <ul class="text-secondary">
+                            <li>"De: XX/XX/XXXX - Até: XX/XX/XXXX"</li>
+                            <li class="list-unstyled">"Cidade-UF"</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-secondary pt-3">
+                            "Cargo"<br>
+                            <i>"Empresa"</i><br><br>
+                            "Descrição da vaga"
+                        </p>
+                    </div>
+                <!-- ==== FIM EXPERIENCIA -->
+            </div>
+            <hr />
+            <h3 id="form">Formação acadêmica</h3>
+            <div class="row">
+                <!-- Copiar e colar as divs a seguir para adicionar nova formação -->
+                <!-- ==== FORMAÇÃO ===== -->
+                <div class="col-sm-6">
+                    <p class="text-secondary">
+                    <ul class="text-secondary">
+                        <li>"De: XX/XXXX - Até: XX/XXXX" </li>
+                        <li class="list-unstyled">"Cidade-UF"</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="text-secondary pt-3">
+                        "Nome Curso"<br>
+                        <i>"Instituição"</i><br>
+                    </p>
+                </div>
+                <!-- ===== FIM FORMAÇÃO ===== -->
+                
+            </div>
+            <hr />
+            <h3 id="cursos">Cursos adicionais</h3>
+            <div class="row">
+                <!-- Copiar e colar as divs a seguir para adicionar nova formação -->
+                <!-- ==== CURSOS ADICONAL ===== -->
+                <div class="col-sm-6">
+                    <p class="text-secondary">
+                    <ul class="text-secondary">
+                        <li>"Ano: XXXX" </li>
+                        <li class="list-unstyled">Substituir por: "Online" ou "Cidade-UF"</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="text-secondary pt-3">
+                        "Nome Curso" (Carga horária: XX Horas)<br>
+                        <i>"Instituição / Site"</i>
+                    </p>
+                </div>
+                <!-- ===== FIM CURSO ADICIONAL ==== -->
+                
+            </div>         
+    </main>
+    <footer id="download" class="text-center pb-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="download/OnePageCurriculo.zip" class="btn btn-primary">
+                    <b>Download zip</b>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                    <b>Ao finalizar edição. basta dar CONTROL+P para Imprimir ou gerar o PDF</b>                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
