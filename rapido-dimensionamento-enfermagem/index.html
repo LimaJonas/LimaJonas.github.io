@@ -36,11 +36,11 @@
     <hr>
         <form name="km">
         <b>KM</b>: (
-        <input type="number" name="dias_semana" placeholder="Dias da semana" required/> /
-        <input type="number" name="chs" placeholder="Carga Horaria Semanal" required/>
+        <input type="text" name="dias_semana" placeholder="Dias da semana" required/> /
+        <input type="text" name="chs" placeholder="Carga Horaria Semanal" required/>
         ) X (
         1 +
-        <input type="number" name="ist" placeholder="IST" required/> %
+        <input type="text" name="ist" placeholder="IST" required/> %
         )
         <button type="button" class="btn btn-primary" onclick="calculakm()">Calcular</button>
         <input type="text" name="resultado_km" disabled>
@@ -50,11 +50,11 @@
         
         <form name="qp">
         <b>QP</b>: 
-        <input type="number" name="km" placeholder="KM" required> X
+        <input type="text" name="km" placeholder="KM" required> X
         (
-        <input type="number" name="num_pacientes" placeholder="Num de Pacientes" required />
+        <input type="text" name="num_pacientes" placeholder="Num de Pacientes" required />
         X
-        <input type="number" name="the" placeholder="THE" required />
+        <input type="text" name="the" placeholder="THE" required />
         )
         <button type="button" class="btn btn-primary" onclick="calculaqp()">Calcular</button>
         <input type="text" name="resultado_qp" disabled>
@@ -93,7 +93,7 @@ function calculakm(){
     arredondado = parseFloat(total.toFixed(4));
 
     document.km.resultado_km.value = "O resultado é "+ arredondado + "!";
-    document.qp.km.value = arredondado;
+    document.qp.km.value = "" + arredondado;
 }
 
 function calculaqp(){
