@@ -1,3 +1,0 @@
-const Comida = ["Pizza","Pastel","Comida Japonesa","Lanche","Comida Mexicana","Comida Italiana","Batata Suiça","Salgados","Sorvete","Açaí","Comida Saudável","O que estiver em promo","Churrasco","Combo Lanche + Batata","Batata Frita","Lasanha","HotDog","Kit Festa","Esfiha"];
-const Bebida = ["Coca-Cola","Guaraná","Fanta Laranja","Fanta Uva","MilkShake","Cerveja","Vinho","Suco","Vitamina","Caipirinha","Alcoolicos","Tubaina"];
-const Filme = ["Ação e Aventura","Drama","Suspense","Terror","Filme Indie","Oldschool","Animação","Anime","Comédia","Ficção Científica","Fantasia","Musical","Romance"];
