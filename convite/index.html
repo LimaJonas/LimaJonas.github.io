@@ -60,7 +60,6 @@ body{
     object-fit:cover;
 
     /* impede interação */
-    pointer-events:none;
 }
 .decoracao{
     width: 25px;
@@ -161,7 +160,7 @@ body{
 
 .nuvens{
     position:relative;
-    padding:30px 25px 165px 25px;
+    padding:45px 25px 165px 25px;
     background-image:
         url('galera.png'),
         url('background.jpg');
@@ -507,6 +506,33 @@ h2{
     position:absolute;
     z-index:3;
 }
+.play-video{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    width:70px;
+    height:70px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(3px);
+
+    color:white;
+    font-size:32px;
+
+    cursor:pointer;
+    z-index:10;
+
+    transition:.3s;
+}
+
+.play-video:hover{
+    transform:translate(-50%, -50%) scale(1.1);
+}
 </style>
 </head>
 <body>
@@ -515,15 +541,16 @@ h2{
 
     <div class="topo">
         <video
+            id="myVideo"
             class="video-topo"
-            autoplay
-            muted
+            controls
             loop
             playsinline
             disablepictureinpicture
             controlslist="nodownload nofullscreen noremoteplayback">
             <source src="topo.mp4" type="video/mp4">
         </video>
+        <button class="play-video" id="playBtn">&nbsp;▶</button>
     </div>
     
     <div class="nuvens">
@@ -662,6 +689,7 @@ function animarTexto(id, delayInicial = 0){
 animarTexto('nome');
 animarTexto('subtitulo', 0.6);
 
+
 function abrirPresente(){
     document.getElementById('overlay').classList.add('ativo');
     document.getElementById('cardPresente').classList.add('ativo');
@@ -670,5 +698,24 @@ function fecharPresente(){
     document.getElementById('overlay').classList.remove('ativo');
     document.getElementById('cardPresente').classList.remove('ativo');
 }
+
+const video = document.getElementById('myVideo');
+const playBtn = document.getElementById('playBtn');
+
+playBtn.addEventListener('click', () => {
+    video.play();
+});
+
+video.addEventListener('play', () => {
+    playBtn.style.display = 'none';
+});
+
+video.addEventListener('pause', () => {
+    playBtn.style.display = 'block';
+});
+
+video.addEventListener('ended', () => {
+    playBtn.style.display = 'block';
+});
 </script>
 </html>
