@@ -3,15 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convite Infantil</title>
-
+<title>Envelope</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-*{
+@page{
+    size: A4;
+    margin: 0;
+}
+html, body{
     margin:0;
     padding:0;
-    box-sizing:border-box;
+}
+body{
+    background:#fff;
+    display:block;
+    padding:0;
 }
 @font-face {
     font-family: 'BravaSlab';
@@ -20,94 +27,22 @@
     font-style: normal;
 }
 body{
-    background:#dff4ff;
-    font-family:'Montserrat',sans-serif;
-    display:flex;
-    justify-content:center;
-    padding:10px;
-}
-
-.convite{
-    width:420px;
     background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    display:block;
+    padding:0;
+    font-family:'Montserrat',sans-serif;
 }
-
-/* TOPO */
-
-.topo{
-    height:200px;
-    position:relative;
-    overflow:hidden;
-    background:#000;
-}
-
-.video-topo{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    /* impede interação */
-    pointer-events:none;
+.convite{
+    width:auto;
+    background:none;
+    border-radius:0;
+    box-shadow:none;
 }
 .decoracao{
     width: 25px;
     position:absolute;
     pointer-events:none;
     z-index:1;
-    animation:balancar 4s ease-in-out infinite;
-}
-.estrela{
-    animation:girar-estrela 4s ease-in-out infinite;
-    transform-origin:center center;
-}
-.d1{ animation-duration:2.5s; }
-.d2{ animation-duration:4.8s; }
-.d3{ animation-duration:5.2s; }
-.e1{ animation-duration:3s;animation-delay:-1s; }
-.e2{ animation-duration:5s;animation-delay:-2.5s; }
-.e3{ animation-duration:4s;animation-delay:-0.5s; }
-.c1{ animation-duration:3.2s; }
-.c2{ animation-duration:3.4s;}
-.c3{ animation-duration:3.5s;}
-@keyframes balancar {
-    0%{
-        transform:translateX(0px) rotate(0deg);
-    }
-    25%{
-        transform:translateX(4px) rotate(1deg);
-    }
-    50%{
-        transform:translateX(0px) rotate(0deg);
-    }
-    75%{
-        transform:translateX(-4px) rotate(-1deg);
-    }
-    100%{
-        transform:translateX(0px) rotate(0deg);
-    }
-}
-@keyframes girar-estrela {
-    0%{
-        transform:rotate(0deg);
-    }
-    25%{
-        transform:rotate(5deg);
-    }
-    50%{
-        transform:rotate(0deg);
-    }
-    75%{
-        transform:rotate(-5deg);
-    }
-    100%{
-        transform:rotate(0deg);
-    }
 }
 .faixa-nuvens{
     position:absolute;
@@ -154,7 +89,13 @@ body{
 
 .nuvens{
     position:relative;
-    padding:30px 25px 250px 25px;
+
+    /* A4 retrato */
+    width:210mm;
+    height:297mm;
+
+    overflow:hidden;
+
     background-image:
         url('galera.png'),
         url('background.jpg');
@@ -171,74 +112,39 @@ body{
         100% auto,
         cover;
 }
+
 .faixa-nuvens,
 .faixa-nuvens2,
 .faixa-nuvens3{
     display:flex;
     gap:30px;
     width:max-content;
+    margin-top: 30px;
 }
-.faixa-nuvens{
-    animation: mover-direita 40s linear infinite;
-}
-.faixa-nuvens2{
-    animation: mover-esquerda 55s linear infinite;
-}
-.faixa-nuvens3{
-    animation: mover-direita 70s linear infinite;
-}
-
-@keyframes mover-direita{
-    from{
-        transform: translateX(-200px);
-    }
-    to{
-        transform: translateX(200px);
-    }
-}
-
-@keyframes mover-esquerda{
-    from{
-        transform: translateX(200px);
-    }
-    to{
-        transform: translateX(-200px);
-    }
-}
-
 /* LOGO */
-
 .logo{
-    width:235px;
-    /* height:70px; */
-    margin:-110px auto 0px;
+    width:370px;
+    margin:0px auto 0px;
     border-radius:50px;
     overflow:hidden;
     position:relative;
     z-index:5;
     animation:balancar 15s ease-in-out infinite;
 }
-
 .logo img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 /* TEXTOS */
-
-
 .subtitulo{
     z-index: 1000;
     text-align:center;
     color:#666;
-    font-size:20px;
+    font-size:20pt;
     margin-bottom:13px;
+    margin-top: 10px;
 }
-
-
-
-
 /* DATA */
 .data{
     display:flex;
@@ -246,74 +152,40 @@ body{
     align-items:center;
     margin-bottom:25px;
 }
-
-.data-box strong{
-    /* display:block; */
-    /* margin-top:5px; */
-    /* font-size:26px; */
-    color:#58bfff;
+.data:hover{
+    cursor: pointer;
 }
-
 .dia{
     text-align:center;
     min-width:120px;
 }
-
-
-/* ÍCONES */
-
-.icones{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    z-index: 1000;
-}
-
-.icone{
+.nome-container{
     text-align:center;
-    z-index: 1000;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 45px;
 }
-.icone:hover{
-    cursor: pointer;
+.linha1{
+    font-family:'BravaSlab', serif;
+    font-size: 80pt;
+    font-weight:bold;
+    color:#A7DCF8;
+    line-height:1;
 }
-
-.circulo{
-    width:58px;
-    height:58px;
-    margin:auto;
-    border-radius:50%;
-    background:#4db8ff;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-}
-
-.icone p{
-    margin-top:8px;
-    font-size:11px;
-    color:#666;
+.linha2{
+    font-family:'Great Vibes', cursive;
+    font-size:60pt;
+    font-weight: bold;
+    color:#C8DE85;
+    margin-top:-25px;
+    position:relative;
+    top:-20px;      /* sobe um pouco */
+    z-index:2;
 }
 </style>
 </head>
 <body>
-
 <div class="convite">
-
-    <div class="topo">
-        <video
-            class="video-topo"
-            autoplay
-            muted
-            loop
-            playsinline
-            disablepictureinpicture
-            controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="topo.mp4" type="video/mp4">
-        </video>
-    </div>
-    
     <div class="nuvens">
         <div class="faixa-nuvens">
             <img src="nuvem.png">
@@ -336,35 +208,41 @@ body{
             <img src="nuvem.png">
             <img src="nuvem.png">
         </div>
-        <img src="dot.png" class="decoracao d1" style="left: 20px;top: 30px;">
-        <img src="dot.png" class="decoracao d2" style="left: 355px;top: 40px;">
-        <img src="dot.png" class="decoracao d3" style="left: 405px;top: 280px;">
-        <img src="dot2.png" class="decoracao d1" style="left: 5px;top: 150px;">
-        <img src="dot2.png" class="decoracao d2" style="width: 28px;left: 390px;top: 100px;">
-        <img src="dot2.png" class="decoracao d3" style="width: 20px;left: 370px;top: 350px;">
-        <img src="dot2.png" class="decoracao d1" style="width: 30px;left: -15px;top: 530px;">
-        <img src="dot3.png" class="decoracao d2" style="left: -20px;top: 60px;">
-        <img src="dot3.png" class="decoracao d3" style="width: 20px;left: 400px;top: 400px;">
-        <img src="dot4.png" class="decoracao d1" style="left: -10px;top: 430px;">
-        <img src="dot4.png" class="decoracao d2" style="left: 320px;top: 80px;">
-        <img src="dot4.png" class="decoracao d3" style="left: 360px;top: 500px;">
-        <img src="estrela.png" class="decoracao estrela e1" style="width: 45px;left: 40px;top: 80px">
-        <img src="estrela.png" class="decoracao estrela e2" style="width: 25px;left: 30px;top: 400px">
-        <img src="estrela2.png" class="decoracao estrela e3" style="width: 40px;left: 330px;top: 220px">
-        <img src="clound.png" class="decoracao c1" style="width: 90px;left: -15px;top: -22px">
-        <img src="clound.png" class="decoracao c2" style="width: 80px;left: -45px;top: 250px">
-        <img src="clound.png" class="decoracao c3" style="width: 95px;left: 350px;top: 150px">
+        <img src="dot.png" class="decoracao" style="left: 4.76%;top: 30px;">
+        <img src="dot.png" class="decoracao" style="left: 84%;top: 40px;">
+        <img src="dot.png" class="decoracao" style="left:96.43%;top:280px;">
+        <img src="dot2.png" class="decoracao" style="left:1.19%;top:150px;">
+        <img src="dot2.png" class="decoracao" style="width:28px;left:92.86%;top:100px;">
+        <img src="dot2.png" class="decoracao" style="width:20px;left:88.10%;top:350px;">
+        <img src="dot2.png" class="decoracao" style="width:30px;left:-3.57%;top:530px;">
+        <img src="dot3.png" class="decoracao" style="left:-4.76%;top:60px;">
+        <img src="dot3.png" class="decoracao" style="width:20px;left:95.24%;top:400px;">
+        <img src="dot4.png" class="decoracao" style="left:-2.38%;top:430px;">
+        <img src="dot4.png" class="decoracao" style="left:76.19%;top:80px;">
+        <img src="dot4.png" class="decoracao" style="left:85.71%;top:500px;">
+        <img src="estrela.png" class="decoracao" style="width:45px;left:9.52%;top:80px;">
+        <img src="estrela.png" class="decoracao" style="width:25px;left:7.14%;top:400px;">
+        <img src="estrela2.png" class="decoracao" style="width:40px;left:78.57%;top:220px;">
+        <img src="clound.png" class="decoracao" style="width:90px;left:-3.57%;top:-22px;">
+        <img src="clound.png" class="decoracao" style="width:80px;left:-10.71%;top:250px">
+        <img src="clound.png" class="decoracao" style="width:95px;left:83.33%;top:150px;">
         <div class="logo">
             <img src="logo3d.png" alt="Logo">
         </div>
-        <p class="subtitulo">
-            Venha comemorar conosco<br>este dia especial
-        </p>
-        <div class="data">
-            <div class="dia">
-                <img src="pdf/envelope.png" alt="">
-            </div>
+        <div class="nome-container">
+            <div class="linha1" id="nome">LEVI</div>
+            <div class="linha2" id="subtitulo">1 ano</div>
         </div>
+        <p class="subtitulo">
+            Você está recebendo<br>um convite especial!
+        </p>
+        <a href="https://limajonas.github.io/convite/">
+            <div class="data">
+                <div class="dia">
+                    <img src="pdf/envelope.png" style="width: 370px">
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 </body>
