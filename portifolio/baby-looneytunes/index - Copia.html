@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+@font-face {
+    font-family: 'BravaSlab';
+    src: url('Brava-Slab-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Horny_Village_SEGUNDA';
+    src: url('horny_village_s.ttf') format('truetype');
+    /* font-weight: bold; */
+    /* font-style: normal; */
+}
+
+body{
+    background:#dff4ff;
+    font-family:'Montserrat',sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:10px;
+}
+
+.convite{
+    width:800px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/* TOPO */
+
+.topo{
+    height:200px;
+    position:relative;
+    overflow:hidden;
+    background:#000;
+}
+
+.video-topo{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    /* impede interação */
+}
+.decoracao{
+    width: 25px;
+    position:absolute;
+    pointer-events:none;
+    z-index:1;
+    animation:balancar 4s ease-in-out infinite;
+}
+.estrela{
+    animation:girar-estrela 4s ease-in-out infinite;
+    transform-origin:center center;
+}
+.d1{ animation-duration:2.5s; }
+.d2{ animation-duration:4.8s; }
+.d3{ animation-duration:5.2s; }
+.e1{ animation-duration:3s;animation-delay:-1s; }
+.e2{ animation-duration:5s;animation-delay:-2.5s; }
+.e3{ animation-duration:4s;animation-delay:-0.5s; }
+.c1{ animation-duration:3.2s; }
+.c2{ animation-duration:3.4s;}
+.c3{ animation-duration:3.5s;}
+@keyframes balancar {
+    0%{
+        transform:translateX(0px) rotate(0deg);
+    }
+    25%{
+        transform:translateX(4px) rotate(1deg);
+    }
+    50%{
+        transform:translateX(0px) rotate(0deg);
+    }
+    75%{
+        transform:translateX(-4px) rotate(-1deg);
+    }
+    100%{
+        transform:translateX(0px) rotate(0deg);
+    }
+}
+@keyframes girar-estrela {
+    0%{
+        transform:rotate(0deg);
+    }
+    25%{
+        transform:rotate(5deg);
+    }
+    50%{
+        transform:rotate(0deg);
+    }
+    75%{
+        transform:rotate(-5deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+.faixa-nuvens{
+    position:absolute;
+    top: -10px;
+    left: -30px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-end;
+    /* z-index:10; */
+}
+.faixa-nuvens img{
+    width:120px;
+    height:auto;
+}
+
+.faixa-nuvens2{
+    position:absolute;
+    top: -30px;
+    left: -80px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-end;
+}
+.faixa-nuvens2 img{
+    width:120px;
+    height:auto;
+}
+.faixa-nuvens3{
+    position:absolute;
+    top: -30px;
+    left: -100px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-end;
+}
+.faixa-nuvens3 img{
+    width:120px;
+    height:auto;
+}
+/* NUVENS */
+
+.nuvens{
+    position:relative;
+    padding:45px 25px 165px 25px;
+    background-image:
+        /* url('galera.png'), */
+        url('background.jpg');
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-position:
+        center bottom,
+        center center;
+
+    background-size:
+        100% auto,
+        cover;
+}
+.faixa-nuvens,
+.faixa-nuvens2,
+.faixa-nuvens3{
+    display:flex;
+    gap:30px;
+    width:max-content;
+}
+.faixa-nuvens{
+    animation: mover-direita 40s linear infinite;
+}
+.faixa-nuvens2{
+    animation: mover-esquerda 55s linear infinite;
+}
+.faixa-nuvens3{
+    animation: mover-direita 70s linear infinite;
+}
+
+@keyframes mover-direita{
+    from{
+        transform: translateX(-200px);
+    }
+    to{
+        transform: translateX(200px);
+    }
+}
+
+@keyframes mover-esquerda{
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        transform: translateX(-200px);
+    }
+}
+
+/* LOGO */
+
+.logo{
+    width:235px;
+    /* height:70px; */
+    margin:-110px auto 0px;
+    border-radius:50px;
+    overflow:hidden;
+    position:relative;
+    z-index:5;
+    animation:balancar 15s ease-in-out infinite;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* TEXTOS */
+
+.nome-container{
+    text-align:center;
+    padding-left:10px;
+    padding-right:10px;
+}
+.linha1{
+    font-family:'BravaSlab', serif;
+    font-size: 52.5pt;
+    font-weight:bold;
+    color:#5dc2f8;
+    line-height:1;
+}
+.linha2{
+    font-family:'Great Vibes', cursive;
+    font-size:48px;
+    color:#b7dd46;
+    margin-top:-15px;
+    position:relative;
+    top:-20px;      /* sobe um pouco */
+    transform:rotate(-5deg);
+    z-index:2;
+}
+.nome-container,
+.linha1,
+.linha2{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+}
+.letra{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(20px);
+    animation:aparecer .5s forwards;
+}
+@keyframes aparecer{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.subtitulo{
+    z-index: 1000;
+    text-align:center;
+    font-weight: bold;
+    color:#666;
+    font-size:20px;
+    margin-bottom:13px;
+}
+
+.subtitulo2{
+    text-align:center;
+    /* color:#666; */
+    color: #b1a9a9;
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+
+
+/* DATA */
+.data{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.data-box{
+    flex:1;
+    text-align:center;
+    color:#666;
+    font-size: 20px;
+    border-top: 1px solid #aaa;border-bottom: 1px solid #aaa;padding-top: 5px;padding-bottom: 5px;
+}
+
+.data-box strong{
+    /* display:block; */
+    /* margin-top:5px; */
+    /* font-size:26px; */
+    color:#58bfff;
+}
+
+.dia{
+    text-align:center;
+    min-width:120px;
+}
+
+.dia .mes{
+    color:#777;
+    font-weight:600;
+}
+
+.dia .numero{
+    font-size:72px;
+    line-height:1;
+    font-weight:700;
+    color:#4db8ff;
+}
+
+.dia .ano{
+    color:#777;
+}
+
+/* ÍCONES */
+
+.icones{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    z-index: 1000;
+}
+
+.icone{
+    text-align:center;
+    z-index: 1000;
+    cursor:pointer;
+    animation:flutuar 4s ease-in-out infinite;
+}
+.icone:nth-child(1){
+    animation-duration:4s;
+}
+
+.icone:nth-child(2){
+    animation-duration:5s;
+    animation-delay:-1s;
+}
+
+.icone:nth-child(3){
+    animation-duration:4.5s;
+    animation-delay:-2s;
+}
+.icone:hover{
+    cursor: pointer;
+}
+
+.circulo{
+    width:58px;
+    height:58px;
+    margin:auto;
+    border-radius:50%;
+    background:#4db8ff;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    transition:.3s;
+    box-shadow:
+        0 0 10px rgba(77,184,255,.5),
+        0 0 20px rgba(77,184,255,.3),
+        0 0 35px rgba(77,184,255,.2);
+    animation:brilho 3s ease-in-out infinite;
+}
+@keyframes brilho {
+    0%{
+        box-shadow:
+            0 0 10px rgba(77,184,255,.4),
+            0 0 20px rgba(77,184,255,.2);
+    }
+    50%{
+        box-shadow:
+            0 0 20px rgba(77,184,255,.8),
+            0 0 40px rgba(77,184,255,.5),
+            0 0 60px rgba(77,184,255,.3);
+    }
+    100%{
+        box-shadow:
+            0 0 10px rgba(77,184,255,.4),
+            0 0 20px rgba(77,184,255,.2);
+    }
+}
+.icone p{
+    margin-top:8px;
+    font-size:11px;
+    color:#666;
+}
+
+/* CSS DO MODAL DE PRESENTES */
+/* fundo escuro */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+    z-index:999;
+}
+
+/* card */
+
+.card-presente{
+    position:fixed;
+    left:0;
+    bottom:0;
+
+    width:100%;
+    max-height:90vh;
+
+    background:#fff;
+    border-radius:25px 25px 0 0;
+
+    transform:translateY(100%);
+    transition:.4s ease;
+
+    z-index:1000;
+
+    overflow:auto;
+}
+
+/* aberto */
+
+.overlay.ativo{
+    opacity:1;
+    visibility:visible;
+}
+
+.card-presente.ativo{
+    transform:translateY(0);
+}
+.conteudo-presente{
+    min-height:500px;
+    padding:60px 30px 40px;
+    /* background:#dceeff; */
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+
+    background-image:url('background.jpg');
+    background-size:cover;
+    background-position:center;
+
+    padding:30px;
+}
+.fechar{
+    position:absolute;
+    top:15px;
+    right:20px;
+
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* Apenas exemplo */
+.conteudo-presente::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(#c7b6ff 2px, transparent 2px);
+    background-size:40px 40px;
+    opacity:.35;
+}
+
+h2{
+    /* font-family: 'Horny_Village_SEGUNDA'; */
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    position:relative;
+    z-index:100;
+    text-align:center;
+    margin-bottom:45px;
+    color:#79552d;
+}
+
+.gift-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    position:relative;
+    z-index:2;
+}
+
+.item{
+    height:58px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding-left:75px;
+    color:white;
+    font-weight:bold;
+    position:relative;
+    margin-bottom: 30px;
+}
+
+.icon-modal{
+    position:absolute;
+    left:0;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.color1{
+    background:#a3d7fc;
+}
+
+/* Imagens */
+
+.character{
+    position:absolute;
+    z-index:3;
+}
+.play-video{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    width:70px;
+    height:70px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(3px);
+
+    color:white;
+    font-size:32px;
+
+    cursor:pointer;
+    z-index:10;
+
+    transition:.3s;
+}
+
+.play-video:hover{
+    transform:translate(-50%, -50%) scale(1.1);
+}
+@keyframes flutuar {
+    0%{
+        transform:translateY(0px) scale(1);
+    }
+    25%{
+        transform:translateY(-4px) scale(1.03);
+    }
+    50%{
+        transform:translateY(0px) scale(1.06);
+    }
+    75%{
+        transform:translateY(4px) scale(1.03);
+    }
+    100%{
+        transform:translateY(0px) scale(1);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="convite">
+
+    
+    <div class="nuvens">
+        <div class="faixa-nuvens">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+        </div>
+        <div class="faixa-nuvens2">
+            <img src="nuvem2.png">
+            <img src="nuvem2.png">
+            <img src="nuvem2.png">
+            <img src="nuvem2.png">
+            <img src="nuvem2.png">
+        </div>
+        <div class="faixa-nuvens3">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+            <img src="nuvem.png">
+        </div>
+        <img src="dot.png" class="decoracao d1" style="left: 20px;top: 30px;">
+        <img src="dot.png" class="decoracao d2" style="left: 767px;top: 40px;">
+        <img src="dot.png" class="decoracao d3" style="left: 745px;top: 280px;">
+        <img src="dot2.png" class="decoracao d1" style="left: 5px;top: 150px;">
+        <img src="dot2.png" class="decoracao d2" style="width: 28px;left: 730px;top: 100px;">
+        <img src="dot2.png" class="decoracao d3" style="width: 20px;left: 770px;top: 350px;">
+        <img src="dot2.png" class="decoracao d1" style="width: 30px;left: 5px;top: 330px;">
+        <img src="dot3.png" class="decoracao d2" style="left: 0px;top: 60px;">
+        <img src="dot3.png" class="decoracao d3" style="width: 20px;left: 720px;top: 400px;">
+        <img src="dot4.png" class="decoracao d1" style="left: 0px;top: 405px;">
+        <img src="dot4.png" class="decoracao d2" style="left: 762px;top: 136px;">
+        <img src="dot4.png" class="decoracao d3" style="left: 753px;top: 408px;">
+        <img src="estrela.png" class="decoracao estrela e1" style="width: 45px;left: 40px;top: 80px">
+        <img src="estrela.png" class="decoracao estrela e2" style="width: 25px;left: 30px;top: 400px">
+        <img src="estrela2.png" class="decoracao estrela e3" style="width: 40px;left: 750px;top: 220px">
+        <img src="clound.png" class="decoracao c1" style="width: 90px;left: 6px;top: -22px">
+        <img src="clound.png" class="decoracao c2" style="width: 80px;left: -10px;top: 250px">
+        <img src="clound.png" class="decoracao c3" style="width: 95px;left: 740px;top: 167px">
+        <br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+<div class="overlay" id="overlay" onclick="fecharPresente()"></div>
+
+<div class="card-presente" id="cardPresente">
+    <div class="fechar" onclick="fecharPresente()">✕</div>
+        <div class="conteudo-presente">
+        <!-- Imagens sobrepostas -->
+        <img src="pernalonga.png" class="character" style="width: 75px;left: 0px;top: 60px;transform: rotate(-10deg);">
+        <img src="taz.png" class="character" style="width: 140px;right: -5px;bottom: -52px;transform: rotate(10deg);">
+        <img src="piu.png" class="character" style="width: 85px;right: 0px;bottom: 210px;transform: rotate(10deg);">
+        <h2>Sua presença já é um presente. Mas, se deseja me presentear:</h2>
+        <ul class="gift-list">
+            <li class="item color1">
+                <div class="icon-modal">
+                    <img src="ic-cabide.png" style="width: 50px">
+                </div>
+                <span>Visto tamanho 2</span>
+            </li>
+            <li class="item color1">
+                <div class="icon-modal">
+                    <img src="ic-sapato.png" style="width: 50px;">
+                </div>
+                <span>Calço 20/21</span>
+            </li>
+            <li class="item color1">
+                <div class="icon-modal">
+                    <img src="ic-brinquedo.png" style="width: 45px">
+                </div>
+                <span>Adoro Brinquedos</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+function animarTexto(id, delayInicial = 0){
+    const elemento = document.getElementById(id);
+    const texto = elemento.textContent;
+
+    elemento.innerHTML = '';
+
+    [...texto].forEach((letra, index) => {
+        const span = document.createElement('span');
+        span.classList.add('letra');
+        span.textContent = letra === ' ' ? '\u00A0' : letra;
+        span.style.animationDelay =
+            `${delayInicial + (index * 0.08)}s`;
+
+        elemento.appendChild(span);
+    });
+}
+
+animarTexto('nome');
+animarTexto('subtitulo', 0.6);
+
+
+function abrirPresente(){
+    document.getElementById('overlay').classList.add('ativo');
+    document.getElementById('cardPresente').classList.add('ativo');
+}
+function fecharPresente(){
+    document.getElementById('overlay').classList.remove('ativo');
+    document.getElementById('cardPresente').classList.remove('ativo');
+}
+
+const video = document.getElementById('myVideo');
+const playBtn = document.getElementById('playBtn');
+
+playBtn.addEventListener('click', () => {
+    video.play();
+});
+
+video.addEventListener('play', () => {
+    playBtn.style.display = 'none';
+});
+
+video.addEventListener('pause', () => {
+    playBtn.style.display = 'block';
+});
+
+video.addEventListener('ended', () => {
+    playBtn.style.display = 'block';
+});
+</script>
+</html>
