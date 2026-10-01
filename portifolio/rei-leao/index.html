@@ -44,30 +44,6 @@ body{
     linear-gradient(#24411e,#506f36);
 }
 
-/* folhas decorativas */
-
-.topo::before,
-.topo::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:rgba(0,0,0,.12);
-    border-radius:50% 0;
-}
-
-.topo::before{
-    left:-50px;
-    bottom:-40px;
-    transform:rotate(25deg);
-}
-
-.topo::after{
-    right:-50px;
-    top:-30px;
-    transform:rotate(-25deg);
-}
-
 /* placa */
 
 .placa{
@@ -85,7 +61,7 @@ body{
 
 .nome{
     position:absolute;
-    top:42%;
+    top:45%;
     left:50%;
     transform:translate(-50%, -50%);
 
@@ -112,32 +88,60 @@ body{
 .conteudo{
     padding:80px 30px 40px;
     text-align:center;
-    background:
+    background-image: url('papel.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background:
     radial-gradient(circle at 10% 10%, rgba(165,132,78,.08), transparent 15%),
     radial-gradient(circle at 80% 70%, rgba(165,132,78,.08), transparent 15%),
-    #f5efdf;
+    #f5efdf; */
 }
 
 .texto{
-    color:#5b2d2d;
-    font-size:17px;
-    line-height:1.6;
+    color: #5b2d2d;
+    font-size: 22px;
+    line-height: 1.6;
+    font-family: 'Patrick Hand';
+    font-weight: 700;
 }
 
-.data{
+/* .data{
     margin-top:35px;
+} */
+.data{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
 }
-
+.data-box{
+    flex:1;
+    text-align:center;
+    color:#666;
+    font-size: 20px;
+    border-top: 1px solid #aaa;border-bottom: 1px solid #aaa;padding-top: 5px;padding-bottom: 5px;
+}
 .dia{
-    font-size:90px;
-    color:#b52f2f;
-    font-family:'Cinzel', serif;
-    line-height:1;
+    text-align:center;
+    min-width:120px;
 }
-
+.dia .numero{
+    color:#b52f2f;
+    font-family:'Patrick Hand', cursive;
+    font-size:60px;
+    line-height:0.9;
+    font-weight:700;
+}
 .mes{
+    margin-top:-10px;
+    margin-bottom: -15px;
+    font-size:50px;
+    color:#d8a328;
+    font-family:'Patrick Hand', cursive;
+}
+.ano{
     margin-top:-20px;
-    font-size:55px;
+    font-size:50px;
     color:#d8a328;
     font-family:'Patrick Hand', cursive;
 }
@@ -158,17 +162,17 @@ body{
     height:90px;
     border-radius:50%;
     background:
-    linear-gradient(
-        135deg,
-        #f7e08b,
-        #d4a220
-    );
+    linear-gradient(135deg, #e8a02d 0%, #FCF6BA 50%, #e8a02d 100%);
+    /* linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%); */
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:38px;
     color:#8f2323;
     margin:auto;
+}
+.icone img {
+    max-width: 50px;
 }
 
 .item p{
@@ -203,31 +207,138 @@ body{
     );
 }
 
+/* CARD PRESENTES */
+
+.card-presente{
+    position:fixed;
+    left:0;
+    bottom:0;
+
+    width:100%;
+    max-height:90vh;
+
+    background:#fff;
+    border-radius:25px 25px 0 0;
+
+    transform:translateY(100%);
+    transition:.4s ease;
+
+    z-index:1000;
+
+    overflow:auto;
+}
+
+/* aberto */
+
+.overlay.ativo{
+    opacity:1;
+    visibility:visible;
+}
+
+.card-presente.ativo{
+    transform:translateY(0);
+}
+.conteudo-presente {
+    min-height: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.conteudo-presente::before {
+    content: "";
+    position: absolute;
+    inset: -5px; /* evita bordas aparecendo por causa do blur */
+    /* background-image: url('papel-w.jpg'); */
+    background-color: #fff3de;
+    background-size: contain;
+    background-position: center;
+    filter: blur(2px);
+    
+    z-index: 0;
+}
+.fechar{
+    position:absolute;
+    top:15px;
+    right:20px;
+
+    font-size:28px;
+    cursor:pointer;
+}
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:999;
+}
+
+h2{
+    font-family:'Patrick Hand', cursive;
+    font-size: 21pt;
+    position:relative;
+    z-index:100;
+    text-align:center;
+    margin-bottom:45px;
+    color:#79552d;
+}
+
+.gift-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    position:relative;
+    z-index:2;
+}
+
+.item-overlay{
+    height:58px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding-left:75px;
+    color:white;
+    font-weight:bold;
+    position:relative;
+    margin-bottom: 30px;
+}
+
+.icon-modal{
+    position:absolute;
+    left:0;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.color1{
+    background:#ae3430;
+}
+
+.character{
+    position:absolute;
+    z-index:3;
+}
 </style>
 </head>
 <body>
-
 <div class="convite">
-
     <div class="topo">
-        <video
-            id="myVideo"
-            class="video-topo"
-            controls
-            loop
-            playsinline
-            disablepictureinpicture
-            controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="topo.mp4" type="video/mp4">
-        </video>
-        <button class="play-video" id="playBtn">&nbsp;▶</button>
+        <img src="rei-leao.jpg" style="width: 430px;">
 
         <div class="placa">
             <img src="title.png" alt="" class="placa-img">
-            <div class="nome">LEVI</div>
+            <div class="nome">Arthur</div>
             <div class="idade">1 ANO</div>
         </div>
-
     </div>
 
     <div class="conteudo">
@@ -238,29 +349,35 @@ body{
         </div>
 
         <div class="data">
-            <div class="dia">12</div>
-            <div class="mes">Julho</div>
+            <div class="data-box">
+                SÁBADO
+            </div>
+            <div class="dia">
+                <div class="mes">AGOSTO</div>
+                <div class="numero">1</div>
+                <div class="ano">2026</div>
+            </div>
+            <div class="data-box">
+                às <strong>15:00</strong>
+            </div>
         </div>
 
-        <div class="texto" style="margin-top:10px">
-            SÁBADO • ÀS 19:00
-        </div>
 
         <div class="info">
 
             <div class="item">
-                <div class="icone">📍</div>
+                <div class="icone"><img src="ic-gps.png"></div>
                 <p>LOCAL</p>
             </div>
 
             <div class="item">
-                <div class="icone">☎</div>
+                <div class="icone"><img src="ic-confirm.png"></div>
                 <p>CONFIRMAR</p>
             </div>
 
-            <div class="item">
-                <div class="icone">🎁</div>
-                <p>PRESENTES</p>
+            <div class="item" onclick="abrirPresente()">
+                <div class="icone"><img src="ic-present.png" alt=""></div>
+                <p>SUGESTÕES</p>
             </div>
 
         </div>
@@ -268,10 +385,50 @@ body{
     </div>
 
     <div class="rodape">
-        <div class="grama"></div>
+        <img src="chars.png" style="position: relative;width: 420px;z-index: 1000;bottom: 130px;">
     </div>
-
+   
 </div>
-
+<div class="overlay" id="overlay" onclick="fecharPresente()"></div>
+<div class="card-presente" id="cardPresente">
+    <div class="fechar" onclick="fecharPresente()">✕</div>
+        <div class="conteudo-presente">
+        <!-- Imagens sobrepostas -->
+        <img src="timao.png" class="character" style="width: 90px;left: 33px;bottom: 127px;transform: rotate(10deg);">
+        <img src="pumba.png" class="character" style="width: 135px;right: 42px;top: 130px;transform: rotate(3deg);">
+        <h2>Sua presença já é um presente. Mas, se deseja me presentear:</h2>
+        <ul class="gift-list">
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    <img src="ic-cabide.png" style="width: 50px">
+                </div>
+                <span>Visto tamanho 2</span>
+            </li>
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    <img src="ic-sapato.png" style="width: 50px;">
+                </div>
+                <span>Calço 20/21</span>
+            </li>
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    &nbsp;
+                    <!-- <img src="ic-brinquedo.png" style="width: 45px"> -->
+                </div>
+                <span>Adoro Brinquedos</span>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
+<script>
+    function abrirPresente(){
+    document.getElementById('overlay').classList.add('ativo');
+    document.getElementById('cardPresente').classList.add('ativo');
+}
+function fecharPresente(){
+    document.getElementById('overlay').classList.remove('ativo');
+    document.getElementById('cardPresente').classList.remove('ativo');
+}
+</script>
 </html>
