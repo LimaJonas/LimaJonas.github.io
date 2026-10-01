@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite Rosa</title>
+
+<!-- Fontes parecidas com as do convite. Remova o @import se quiser usar apenas fontes locais. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+    --cream: #fffbe9;
+    --cream-2: #fff8df;
+    --pink: #f39ba9;
+    --pink-dark: #ee8d9d;
+    --yellow: #e8b927;
+    --orange: #eda76c;
+    --cloud: #fffdf8;
+    --sky: #f8eadb;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 28px 14px;
+    background:
+        radial-gradient(circle at 12% 15%, rgba(255,255,255,.75) 0 60px, transparent 61px),
+        radial-gradient(circle at 88% 75%, rgba(255,255,255,.6) 0 75px, transparent 76px),
+        #f7e9dc;
+    font-family: "Quicksand", Arial, sans-serif;
+    color: var(--orange);
+}
+
+/* O convite mantém uma proporção próxima de um convite vertical para celular. */
+.invite {
+    position: relative;
+    width: min(100%, 430px);
+    min-height: 850px;
+    aspect-ratio: 0.572;
+    overflow: hidden;
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 50% 22%, rgba(255,255,255,.25), transparent 31%),
+        linear-gradient(180deg, #fffdf1 0%, var(--cream) 100%);
+    border: 4px solid #f2b0b0;
+    box-shadow:
+        0 14px 35px rgba(182, 126, 104, .20),
+        inset 0 0 0 2px rgba(255,255,255,.7);
+}
+
+/* Moldura interna */
+.invite::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 2px solid rgba(247, 170, 177, .35);
+    border-radius: 19px;
+    pointer-events: none;
+}
+
+/* ---------- ELEMENTOS DECORATIVOS ---------- */
+
+.cloud {
+    position: absolute;
+    width: 125px;
+    height: 47px;
+    background: linear-gradient(#fffefa, #f5f5f1);
+    border-radius: 50px;
+    filter: drop-shadow(0 4px 3px rgba(170,170,170,.12));
+    opacity: .96;
+}
+.cloud::before, .cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+.cloud::before {
+    width: 55px;
+    height: 55px;
+    left: 18px;
+    bottom: 10px;
+}
+.cloud::after {
+    width: 67px;
+    height: 67px;
+    right: 4px;
+    bottom: 4px;
+}
+.cloud.c1 { top: 32px; left: -43px; transform: rotate(8deg); }
+.cloud.c2 { top: 125px; right: -50px; transform: rotate(-8deg) scale(.9); }
+.cloud.c3 { top: 285px;left: -30px;transform: scale(.78);z-index: 10; }
+.cloud.c4 { bottom: 19px; right: -36px; transform: scale(.72);z-index: 10; }
+
+.sun {
+    position: relative;
+    width: 145px;
+    height: 145px;
+    margin: 42px auto 0;
+}
+.sun-face {
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 34% 32%, rgba(255,245,156,.55), transparent 20%),
+        #e8b633;
+    box-shadow: inset 5px 7px 15px rgba(185,132,19,.13);
+}
+.ray {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 9px;
+    height: 31px;
+    margin-left: -4.5px;
+    border-radius: 50%;
+    background: #e6b52e;
+    transform-origin: 4.5px 72px;
+}
+.ray:nth-child(1) { transform: rotate(0deg); }
+.ray:nth-child(2) { transform: rotate(32deg); }
+.ray:nth-child(3) { transform: rotate(64deg); }
+.ray:nth-child(4) { transform: rotate(96deg); }
+.ray:nth-child(5) { transform: rotate(128deg); }
+.ray:nth-child(6) { transform: rotate(160deg); }
+.ray:nth-child(7) { transform: rotate(192deg); }
+.ray:nth-child(8) { transform: rotate(224deg); }
+.ray:nth-child(9) { transform: rotate(256deg); }
+.ray:nth-child(10) { transform: rotate(288deg); }
+.ray:nth-child(11) { transform: rotate(320deg); }
+
+.eye {
+    position: absolute;
+    top: 52px;
+    width: 9px;
+    height: 17px;
+    border-radius: 50%;
+    background: #713219;
+}
+.eye.left { left: 30px;top: 35px; }
+.eye.right { right: 30px;top: 35px; }
+
+.smile {
+    position: absolute;
+    width: 35px;
+    height: 22px;
+    left: 50%;
+    top: 52px;
+    transform: translateX(-50%);
+    border-bottom: 5px solid #713219;
+    border-radius: 0 0 30px 30px;
+}
+
+.cheek {
+    position: absolute;
+    top: 68px;
+    width: 23px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ef858c;
+    opacity: .78;
+}
+.cheek.left { left: 12px;top: 50px; }
+.cheek.right { right: 12px;top: 50px; }
+
+/* Arco-íris */
+.rainbow {
+  position: absolute;
+  height: 130px;
+  margin: 0 auto;
+  width: 130px;
+  border: solid 5px;
+  border-radius: 50%;
+  bottom: -62px;
+  border-color: #fac0c5;
+  box-shadow:
+    inset 0 0 0 10px #facfb6,
+    inset 0 0 0 20px #fade88,
+    inset 0 0 0 30px #dde5d7;
+}
+.rainbow:after {
+  background-color: #fffced;
+  bottom: 60px;
+  content: "";
+  left: -50px;
+  position: absolute;
+  right: -50px;
+  transform-origin: bottom center;
+  transform: rotateZ(180deg);
+  animation: spin 2s ease-in-out infinite;
+  z-index: 1;
+}
+.rainbow:before {
+  content: "";
+  background-color: #fffced;
+  bottom: 60px;
+  content: "";
+  left: -5px;
+  position: absolute;
+  right: -50px;
+  top: 0px;
+  transform-origin: bottom center;
+  transform: rotateZ(180deg);
+  z-index: 2;
+}
+.rainbow.r1 { left: -40px; top: 195px; transform: rotate(35deg); }
+.rainbow.r2 { right: -48px; bottom: 15px; transform: rotate(324deg); }
+.rainbow.r3 { right: 62px;bottom: -252px;width: 300px;height: 300px; }
+/* ---------- CONTEÚDO ---------- */
+
+.content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 28px;
+}
+
+.name {
+    margin: -2px 0 0;
+    color: #f09aaa;
+    font-family: "Dancing Script", "Brush Script MT", cursive;
+    font-size: clamp(70px, 19vw, 104px);
+    line-height: .85;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-shadow: 1px 2px 0 rgba(255,255,255,.5);
+}
+
+.subtitle {
+    margin: 14px 0 0;
+    color: #dfb329;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(34px, 9vw, 47px);
+    line-height: 1;
+    font-weight: 500;
+}
+
+.message {
+    margin: 24px auto 0;
+    max-width: 360px;
+    color: #e79d63;
+    font-size: clamp(17px, 4.3vw, 21px);
+    line-height: 1.28;
+    font-weight: 600;
+}
+
+/* Data */
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 36px auto 0;
+    max-width: 355px;
+    align-items: center;
+}
+
+.detail {
+    min-height: 116px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail + .detail {
+    border-left: 2px dashed #dfb52e;
+}
+
+.big {
+    color: #f39ca9;
+    font-size: clamp(39px, 10vw, 52px);
+    line-height: .9;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.script {
+    margin-top: 8px;
+    color: #e1ae22;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1;
+    font-weight: 600;
+}
+
+/* Botões */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+.action {
+    width: 102px;
+    color: #e99da7;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 9px;
+    border-radius: 50%;
+    background: #f3a2ad;
+    display: grid;
+    place-items: center;
+    position: relative;
+    box-shadow: 0 3px 0 rgba(220,130,145,.08);
+}
+
+/* ícone localização */
+.pin {
+    width: 30px;
+    height: 30px;
+    border: 6px solid white;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    position: relative;
+}
+.pin::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+/* ícone presente */
+.gift {
+    width: 42px;
+    height: 34px;
+    border: 4px solid white;
+    position: relative;
+}
+.gift::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -4px;
+    bottom: 0;
+    border-left: 4px solid white;
+}
+.gift::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -11px;
+    width: 42px;
+    height: 9px;
+    border: 4px solid white;
+}
+
+/* ícone check */
+.check {
+    width: 42px;
+    height: 25px;
+    border-left: 8px solid white;
+    border-bottom: 8px solid white;
+    transform: rotate(-45deg);
+    margin-top: -8px;
+}
+
+/* Texto final */
+.hint {
+    margin-top: 17px;
+    color: #e5a661;
+    font-family: "Dancing Script", cursive;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+@media (max-width: 450px) {
+    body { padding: 0; }
+    .invite {
+        width: 100%;
+        min-height: 100vh;
+        aspect-ratio: auto;
+        border-radius: 0;
+        border-width: 3px;
+    }
+    .content { padding-left: 20px; padding-right: 20px; }
+    .sun { margin-top: 35px; transform: scale(.92); }
+    .message { margin-top: 19px; }
+    .details { margin-top: 28px; }
+    .actions { margin-top: 23px; gap: 5px; }
+    .action { width: 96px; }
+}
+
+/* CARD OVERLAY */
+.card-presente{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    max-height:90vh;
+    background:#fff;
+    border-radius:25px 25px 0 0;
+    transform:translateY(100%);
+    transition:.4s ease;
+    z-index:1000;
+    overflow:auto;
+}
+/* aberto */
+
+.overlay.ativo{
+    opacity:1;
+    visibility:visible;
+}
+.card-presente.ativo{
+    transform:translateY(0);
+}
+.conteudo-presente {
+    min-height: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.conteudo-presente::before {
+    content: "";
+    position: absolute;
+    inset: -5px; /* evita bordas aparecendo por causa do blur */
+    background-color: #f5e9dd;
+    background-size: contain;
+    background-position: center;
+    filter: blur(2px);
+    
+    z-index: 0;
+}
+.fechar{
+    position:absolute;
+    top:15px;
+    right:20px;
+
+    font-size:28px;
+    cursor:pointer;
+}
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:999;
+}
+.gift-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    position:relative;
+    z-index:2;
+}
+.item-overlay{
+    height:58px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding-left:75px;
+    color:white;
+    font-weight:bold;
+    position:relative;
+    margin-bottom: 30px;
+}
+.icon-modal{
+    position:absolute;
+    left:0;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+.color1{
+    background:#eda4ae;
+}
+.character{
+    position:absolute;
+    z-index:3;
+}
+</style>
+</head>
+
+<body>
+<main class="invite">
+
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="cloud c4"></div>
+
+    <div class="rainbow r1"></div>
+    <div class="rainbow r2"></div>
+
+    <div class="sun" aria-label="Sol sorridente">
+        <span class="ray"></span><span class="ray"></span><span class="ray"></span>
+        <span class="ray"></span><span class="ray"></span><span class="ray"></span>
+        <span class="ray"></span><span class="ray"></span><span class="ray"></span>
+        <span class="ray"></span><span class="ray"></span>
+
+        <div class="sun-face">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+            <span class="cheek left"></span>
+            <span class="cheek right"></span>
+            <span class="smile"></span>
+        </div>
+    </div>
+
+    <section class="content">
+        <h1 class="name">Helena</h1>
+        <div class="subtitle">faz 1 aninho</div>
+
+        <p class="message">
+            Há um ano o sol brilha mais forte,<br>
+            pois minha jornada começou, <br>vamos comemorar!
+        </p>
+
+        <section class="details">
+            <div class="detail">
+                <div class="big">08/03</div>
+                <div class="script">Domingo</div>
+            </div>
+            <div class="detail">
+                <div class="big">11:00</div>
+                <div class="script">Horas</div>
+            </div>
+        </section>
+
+        <nav class="actions" aria-label="Informações do evento">
+            <a class="action" href="#localizacao" onclick="">
+                <div class="icon"><img src="ic-gps.png" style="width: 40px;"></div>
+                Localização
+            </a>
+
+            <a class="action" href="#confirmar" onclick="">
+                <div class="icon"><img src="ic-confirm.png" style="width: 40px"></div>
+                Confirmar<br>presença
+            </a>
+
+            <a class="action" href="#presente" onclick="abrirPresente()">
+                <div class="icon"><img src="ic-present.png" style="width: 40px"></div>
+                Sugestão<br>para presente
+            </a>
+        </nav>
+
+        <div class="hint">Clique nos ícones para interagir! ↗</div>
+    </section>
+
+    <div class="rainbow r3"></div>
+
+<div class="overlay" id="overlay" onclick="fecharPresente()"></div>
+<div class="card-presente" id="cardPresente">
+    <div class="fechar" onclick="fecharPresente()">✕</div>
+        <div class="conteudo-presente">
+        <!-- Imagens sobrepostas -->
+        <ul class="gift-list">
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    <img src="ic-cabide.png" style="width: 50px">
+                </div>
+                <span>Visto tamanho 1</span>
+            </li>
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    <img src="ic-sapato.png" style="width: 50px;">
+                </div>
+                <span>Calço 19/20</span>
+            </li>
+            <li class="item-overlay color1">
+                <div class="icon-modal">
+                    &nbsp;
+                    <img src="ic-brinquedo.png" style="width: 45px">
+                </div>
+                <span>Adoro Brinquedos</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</main>
+</body>
+<script>
+function abrirPresente(){
+    document.getElementById('overlay').classList.add('ativo');
+    document.getElementById('cardPresente').classList.add('ativo');
+}
+function fecharPresente(){
+    document.getElementById('overlay').classList.remove('ativo');
+    document.getElementById('cardPresente').classList.remove('ativo');
+}
+</script>
+</html>
