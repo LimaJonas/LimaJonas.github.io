@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branca de Neve Baby</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+    --card-width: 430px;
+    --card-height: 820px;
+    --page-background: #FFF;
+    --text-color: #333333;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 25px 14px;
+    background: var(--page-background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.invite {
+    position: relative;
+    width: min(100%, var(--card-width));
+    height: var(--card-height);
+    overflow: hidden;
+    border-radius: 20px;
+
+    /* Troque background.jpg pela sua imagem */
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .15);
+}
+
+/* Opcional: coloque rgba(255,255,255,.10) aqui se precisar clarear
+   a imagem para melhorar a leitura dos textos. */
+.invite::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 30px 35px;
+    text-align: center;
+    color: var(--text-color);
+    background: linear-gradient(45deg, #e6f5ff, #fff);
+}
+
+.title {
+    font-family: 'Great Vibes';
+    color: #fff;
+    margin: 0;
+    margin-top: 18px;
+    font-size: 50pt;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-family: 'Great Vibes';
+    color: #fff;
+    margin: -12px 0 0;
+    font-size: 36pt;
+    line-height: 1.3;
+}
+
+.message {
+    font-family:'Georgia', serif;
+    max-width: 350px;
+    margin: 5px auto 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 340px;
+    width: 100%;
+    margin: 35px auto 0;
+}
+
+.detail {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail + .detail {
+    border-left: 1px solid rgba(0, 0, 0, .35);
+}
+
+.number {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.label {
+    margin-top: 7px;
+    font-size: 17px;
+}
+
+
+.location {
+    font-family:'Montserrat',sans-serif;
+    margin: 0 auto 0px;
+    max-width: 330px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    z-index: 1000;
+    margin-top: 5px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.action{
+    text-align:center;
+    z-index: 1000;
+    cursor:pointer;
+    animation:flutuar 4s ease-in-out infinite;
+    text-decoration: none;
+    color: #b42215;
+    font-family:'Montserrat',sans-serif;
+}
+
+/* DATA */
+.data{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+    margin-top: 15px;
+}
+.data-box{
+    font-family:'Georgia', serif;
+    flex:1;
+    text-align:center;
+    color:#b42215;
+    font-size: 20px;
+    border-top: 1px solid #aaa;border-bottom: 1px solid #aaa;padding-top: 5px;padding-bottom: 5px;
+}
+.dia{
+    text-align:center;
+    min-width:120px;
+}
+.dia .mes{
+    font-family:'Georgia', serif;
+    color:#b42215;
+    font-weight:600;
+}
+.dia .numero{
+    font-size:50px;
+    line-height:1;
+    font-weight:700;
+    color:#b42215;
+}
+.dia .ano{
+    color:#b42215;
+}
+</style>
+</head>
+
+<body>
+
+<main class="invite">
+    <div class="content">
+        <img src="nome.png" style="position: absolute;width: 380px;z-index: -1;top: -5px;">
+        <img src="grama.png" style="position: absolute;filter: blur(1px);top: 600px;left: -70px;">
+        <img src="brancadeneve.png" style="position: absolute;width: 185px;left: 120px;top: 630px;;">
+        <img src="casa.png" style="position: absolute;width: 250px;top: 540px;z-index: 1;left: -105px;">
+        <img src="nuvem.png" style="position: absolute;width: 130px;top: 420px;left: -54px;filter: blur(1px);">
+        <img src="nuvem.png" style="position: absolute;width: 130px;top: 150px;right: -58px;filter: blur(1px);">
+        <img src="rosa.png" style="position: absolute;width: 120px;top: -39px;left: -49px;transform: rotate(36deg);z-index: -4;">
+        <img src="rosa.png" style="position: absolute;width: 120px;top: -39px;right: -66px;transform: rotate(36deg);z-index: -4;">
+        <h1 class="title">Maite</h1>
+        <div class="subtitle">1 ano</div>
+
+        <p class="message" style="font-family:'Great Vibes', cursive;color:#b42215;font-size: 30pt;margin-top: 30px;">
+            O Reino está em festa!
+        </p>
+        <p class="message">
+            A Alteza tem o prazer de convidar os<br>
+            príncipes e princesas dos Reinos vizinhos<br>
+            para comemorar seu aniversário!
+        </p>
+
+        
+        <div class="data">
+            <div class="data-box">
+                SÁBADO
+            </div>
+            <div class="dia">
+                <div class="mes">AGOSTO</div>
+                <div class="numero" style="font-family:'Great Vibes', cursive;">03</div>
+                <div class="ano">2026</div>
+            </div>
+            <div class="data-box">
+                às <strong>15:00</strong>
+            </div>
+        </div>
+        <p class="location">
+            Salão de Festas<br>
+            Rua Exemplo, 123 - Cidade - Estado
+        </p>
+        <nav class="actions">
+            <a class="action" href="#"><img src="ic-gps.png" style="width: 65px"><br>Localização</a>
+            <a class="action" href="#"><img src="ic-confirm.png" style="width: 65px"><br>Confirmar</a>
+            <a class="action" href="#"><img src="ic-presente.png" style="width: 65px"><br>Sugestões</a>
+        </nav>
+
+
+    </div>
+</main>
+
+</body>
+</html>
