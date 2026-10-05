@@ -186,6 +186,47 @@ body {
 .dia .ano{
     color:#b42215;
 }
+.decoracao{
+    pointer-events:none;
+    animation:subirdescer 2s ease-in-out infinite;
+    z-index: -1;
+}
+.decoracao-2{
+    pointer-events:none;
+    animation:balancar 2s ease-in-out infinite;
+}
+.d1{ animation-duration:2.5s; }
+.d1{ animation-duration:2.7s; }
+@keyframes subirdescer {
+     0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+}
+
+@keyframes balancar {
+    0%{
+        transform:translateX(0px) rotate(36deg);
+    }
+    50%{
+        transform:translateX(-4px) rotate(36deg);
+    }
+}
+.letra{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(20px);
+    animation:aparecer .5s forwards;
+}
+@keyframes aparecer{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 </style>
 </head>
 
@@ -197,12 +238,12 @@ body {
         <img src="grama.png" style="position: absolute;filter: blur(1px);top: 615px;left: -70px;">
         <img src="brancadeneve.png" style="position: absolute;width: 185px;left: 50%;transform: translateX(-50%);top: 645px;">
         <img src="casa.png" style="position: absolute;width: 250px;top: 555px;z-index: 1;left: -125px;">
-        <img src="nuvem.png" style="position: absolute;width: 130px;top: 420px;left: -54px;filter: blur(1px);">
-        <img src="nuvem.png" style="position: absolute;width: 130px;top: 150px;right: -58px;filter: blur(1px);">
-        <img src="rosa.png" style="position: absolute;width: 120px;top: -39px;left: -49px;transform: rotate(36deg);z-index: -4;">
-        <img src="rosa.png" style="position: absolute;width: 120px;top: -39px;right: -66px;transform: rotate(36deg);z-index: -4;">
-        <h1 class="title">Maite</h1>
-        <div class="subtitle">1 ano</div>
+        <img src="nuvem.png" class="decoracao d1" style="position: absolute;width: 130px;top: 420px;left: -54px;filter: blur(1px);">
+        <img src="nuvem.png" class="decoracao" style="position: absolute;width: 130px;top: 150px;right: -58px;filter: blur(1px);">
+        <img src="rosa.png" class="decoracao-2" style="position: absolute;width: 120px;top: -39px;left: -49px;transform: rotate(36deg);z-index: -4;">
+        <img src="rosa.png" class="decoracao-2 d1" style="position: absolute;width: 120px;top: -39px;right: -66px;transform: rotate(36deg);z-index: -4;">
+        <h1 class="title" id="nome">Maite</h1>
+        <div class="subtitle" id="subtitulo">1 ano</div>
 
         <p class="message" style="font-family:'Great Vibes', cursive;color:#b42215;font-size: 30pt;margin-top: 30px;">
             O Reino está em festa!
@@ -232,14 +273,34 @@ body {
             Rua Exemplo, 123 - Cidade - Estado
         </p>
         <nav class="actions">
-            <a class="action" href="#"><img src="ic-gps.png" style="width: 65px"><br>Localização</a>
-            <a class="action" href="#"><img src="ic-confirm.png" style="width: 65px"><br>Confirmar</a>
-            <a class="action" href="#"><img src="ic-presente.png" style="width: 65px"><br>Sugestões</a>
+            <a class="action" href="#"><img class="decoracao d2" src="ic-gps.png" style="width: 65px"><br>Localização</a>
+            <a class="action" href="#"><img class="decoracao d1" src="ic-confirm.png" style="width: 65px"><br>Confirmar</a>
+            <a class="action" href="#"><img class="decoracao" src="ic-presente.png" style="width: 65px"><br>Sugestões</a>
         </nav>
 
 
     </div>
 </main>
+<script>
+function animarTexto(id, delayInicial = 0){
+    const elemento = document.getElementById(id);
+    const texto = elemento.textContent;
 
+    elemento.innerHTML = '';
+
+    [...texto].forEach((letra, index) => {
+        const span = document.createElement('span');
+        span.classList.add('letra');
+        span.textContent = letra === ' ' ? '\u00A0' : letra;
+        span.style.animationDelay =
+            `${delayInicial + (index * 0.08)}s`;
+
+        elemento.appendChild(span);
+    });
+}
+
+animarTexto('nome');
+animarTexto('subtitulo', 0.6);
+</script>
 </body>
 </html>
